@@ -2,7 +2,7 @@ import { useReducer } from 'react';
 
 const initialInputState = {
   value: '',
-  istouched: false,
+  isTouched: false,
 };
 
 const inputStateReducer = (state, action) => {
@@ -24,8 +24,8 @@ const useInput = (validateValue) => {
     initialInputState
   );
 
-  const valueIsValid = validateValue(inputState);
-  const hasError = !valueIsValid && inputState.istouched;
+  const valueIsValid = validateValue(inputState.value);
+  const hasError = !valueIsValid && inputState.isTouched;
 
   const valueChangeHandler = (event) => {
     dispatch({ type: 'INPUT', value: event.target.value });
@@ -35,7 +35,7 @@ const useInput = (validateValue) => {
     dispatch({ type: 'BLUR' });
   };
 
-  const reset = (value) => {
+  const reset = () => {
     dispatch({ type: 'RESET' });
   };
   return {
