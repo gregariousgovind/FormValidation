@@ -67,7 +67,9 @@ const BasicForm = (props) => {
             onChange={firstNameChangeHandler}
             onBlur={firstNameBlurHandler}
           />
-          {firstNameInputHasError && <p>Please enter first name.</p>}
+          {firstNameInputHasError && (
+            <p className="error-text">Please enter first name.</p>
+          )}
         </div>
         <div
           className={`form-control ${lastNameInputHasError ? 'invalid' : ''}`}
@@ -80,7 +82,9 @@ const BasicForm = (props) => {
             onChange={lastNameChangeHandler}
             onBlur={lastNameBlurHandler}
           />
-          {lastNameInputHasError && <p>Please enter last name.</p>}
+          {lastNameInputHasError && (
+            <p className="error-text">Please enter last name.</p>
+          )}
         </div>
       </div>
       <div className={`form-control ${emailInputHasError ? 'invalid' : ''}`}>
@@ -92,7 +96,9 @@ const BasicForm = (props) => {
           onChange={emailChangeHandler}
           onBlur={emailBlurHandler}
         />
-        {emailInputHasError && <p>Please enter valid email.</p>}
+        {emailInputHasError && (
+          <p className="error-text">Please enter valid email.</p>
+        )}
       </div>
       <div className="form-actions">
         <button disabled={!formIsValid}>Submit</button>
