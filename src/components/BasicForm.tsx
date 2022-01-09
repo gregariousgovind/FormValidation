@@ -42,7 +42,7 @@ const BasicForm = (props) => {
       return;
     }
     console.log(
-      `Form submitted: 
+      `Form submitted - 
       {
         First Name: ${enteredFirstName},
         Last Name: ${enteredLastName},
